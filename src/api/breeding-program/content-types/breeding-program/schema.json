@@ -90,10 +90,6 @@
       "type": "string",
       "default": "HORRORBULLZHQ"
     },
-    "partnership_theme_enabled": {
-      "type": "boolean",
-      "default": true
-    },
     "partnership_featured_main_title": {
       "type": "string",
       "default": "MAX LINE BULLDOGS"
@@ -109,6 +105,10 @@
     "partnership_coming_soon_message": {
       "type": "string",
       "default": "💀 More HorrorBullz Coming Soon 💀"
+    },
+    "partnership_theme_enabled": {
+      "type": "boolean",
+      "default": true
     }
   }
 }
