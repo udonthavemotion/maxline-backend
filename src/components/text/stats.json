@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_text_stats",
+  "info": {
+    "displayName": "stats",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

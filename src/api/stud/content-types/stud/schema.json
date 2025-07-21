@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "studs",
+  "info": {
+    "singularName": "stud",
+    "pluralName": "studs",
+    "displayName": "Stud",
+    "description": "English Bulldog studs available for breeding"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "age": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "fee": {
+      "type": "integer",
+      "min": 0
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "bloodlines": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "specialties": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "availability": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Available",
+      "enum": [
+        "Available",
+        "Busy",
+        "Reserved"
+      ]
+    },
+    "background_video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "videos"
+      ]
+    },
+    "background_color": {
+      "type": "string"
+    },
+    "individuality": {
+      "type": "richtext"
+    },
+    "page_gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    }
+  }
+}
