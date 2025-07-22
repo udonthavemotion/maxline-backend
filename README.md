@@ -1,61 +1,124 @@
-# 🚀 Getting started with Strapi
+# Max Line Bulldogs - Backend
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+A modern Strapi CMS for managing bulldogs, studs, puppies, and breeding programs with integrated Supabase database and Cloudinary media storage.
 
-### `develop`
+## 🚀 Quick Start
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+### 1. Environment Setup
 
+Copy the example environment file and update with your values:
+
+```bash
+# Database - Supabase Direct Connection URI (PREFERRED)
+DATABASE_URL=postgresql://postgres:maxlinebulldogs%4012.@db.ktjakhfvyypdrzibxtbj.supabase.co:5432/postgres
+DATABASE_CLIENT=postgres
 ```
+
+> **Note**: The `@` symbol in the password is encoded as `%40` and the final `.` is preserved as required.
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Run Development Server
+
+```bash
 npm run develop
-# or
-yarn develop
 ```
 
-### `start`
+## 🗄️ Database Configuration
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+### Supabase Integration
 
+The project uses **Supabase Direct Connection URI** for optimal performance and Strapi Cloud compatibility:
+
+- **Production**: Uses `DATABASE_URL` connection string with SSL enabled
+- **Local Development**: Falls back to individual database variables if needed
+- **SSL**: Automatically configured with `rejectUnauthorized: false` for Supabase
+
+### Configuration Priority
+
+1. ✅ **DATABASE_URL** (Direct URI) - Recommended for production
+2. 🔄 Individual parameters (`DATABASE_HOST`, `DATABASE_PORT`, etc.) - Fallback
+
+## 📁 Content Types
+
+- **Studs**: Male breeding dogs with DNA, fees, and gallery images
+- **Puppies**: Available puppies with status, pricing, and photos
+- **Testimonials**: Customer reviews and feedback
+- **Homepage**: Dynamic homepage content and hero sections
+- **Breeding Program**: Breeding information and gallery
+
+## 🖼️ Media Management
+
+- **Cloudinary Integration**: Unified media storage and optimization
+- **Image Uploads**: Automatic processing and CDN delivery
+- **Gallery Support**: Multiple images per stud/puppy
+
+## 🔐 API Access
+
+- **Admin Panel**: Full CMS access at `http://localhost:1337/admin`
+- **API Endpoints**: RESTful API at `http://localhost:1337/api/`
+- **Public Token**: Read-only access for frontend integration
+
+## 🌐 Deployment
+
+### Strapi Cloud Ready
+
+The configuration is optimized for Strapi Cloud deployment:
+
+- ✅ Supabase Direct URI connection
+- ✅ SSL/TLS compatibility  
+- ✅ Environment variable support
+- ✅ Media upload integration
+
+### Environment Variables Required
+
+```bash
+DATABASE_URL=postgresql://postgres:password@host:5432/postgres
+DATABASE_CLIENT=postgres
+CLOUDINARY_NAME=your_cloud_name
+CLOUDINARY_KEY=your_api_key  
+CLOUDINARY_SECRET=your_api_secret
+APP_KEYS=your_app_keys
+JWT_SECRET=your_jwt_secret
 ```
-npm run start
-# or
-yarn start
+
+## 📊 Database Management
+
+### Backup & Restore
+
+```bash
+# Create backup
+npm run backup:create
+
+# Restore from backup  
+npm run backup:restore
 ```
 
-### `build`
+### Migration
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+For switching from individual database parameters to Direct Connection URI, see `SUPABASE_MIGRATION_GUIDE.md`.
 
-```
-npm run build
-# or
-yarn build
-```
+## 🔧 Development
 
-## ⚙️ Deployment
+### Scripts
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-```
-yarn strapi deploy
+```bash
+npm run develop      # Development with hot reload
+npm run start        # Production mode
+npm run build        # Build admin panel
+npm run strapi       # Strapi CLI commands
 ```
 
-## 📚 Learn more
+### API Testing
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+Access the API documentation at:
+- REST API: `http://localhost:1337/api/`
+- Admin: `http://localhost:1337/admin`
 
 ---
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+**For detailed Supabase setup and migration instructions, see `SUPABASE_MIGRATION_GUIDE.md`**
