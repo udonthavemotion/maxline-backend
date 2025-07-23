@@ -10,9 +10,9 @@
     "dev": "strapi develop",
     "develop": "strapi develop",
     "start": "strapi start",
-    "strapi": "strapi",
     "upgrade": "npx @strapi/upgrade latest",
-    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+    "upgrade:dry": "npx @strapi/upgrade latest --dry",
+    "develop:local": "dotenv -e .env.local -- strapi develop"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.18.1",
@@ -30,6 +30,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "dotenv-cli": "^9.0.0",
     "typescript": "^5"
   },
   "engines": {
